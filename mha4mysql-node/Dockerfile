@@ -5,7 +5,6 @@ COPY ./mha4mysql-node.tar.gz /tmp/
 RUN build_deps='ssh sshpass perl libdbi-perl libmodule-install-perl libdbd-mysql-perl make' \
     && apt-get update \
     && apt-get -y --force-yes install $build_deps \
-    # && sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config \
     && tar -zxf /tmp/mha4mysql-node.tar.gz -C /opt \
     && cd /opt/mha4mysql-node \
     && perl Makefile.PL \
